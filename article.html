@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/libs.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__top-logo"><a href="#"><img src="./img/logo.svg" alt="logo"></a></div>
+          <div class="header__top-change">
+            <button type="button" data-modal="modal_change_sity"><svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.71429 5.46116V5.28833C7.71429 3.51313 6.2752 2.07404 4.5 2.07404C2.7248 2.07404 1.28571 3.51313 1.28571 5.28833V5.46116C1.28571 6.28159 1.5835 7.07414 2.12376 7.69158L4.5 10.4073L6.87624 7.69159C7.4165 7.07414 7.71429 6.28159 7.71429 5.46116ZM4.5 0.78833C2.01472 0.78833 0 2.80305 0 5.28833V5.46116C0 6.59302 0.410826 7.68642 1.15617 8.53823L3.5324 11.2539C4.04464 11.8394 4.95535 11.8394 5.4676 11.2539L7.84383 8.53823C8.58917 7.68642 9 6.59302 9 5.46116V5.28833C9 2.80305 6.98528 0.78833 4.5 0.78833Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.85725 5.28831C3.85725 5.64335 4.14506 5.93117 4.5001 5.93117C4.85514 5.93117 5.14296 5.64335 5.14296 5.28831C5.14296 4.93327 4.85514 4.64546 4.5001 4.64546C4.14506 4.64546 3.85725 4.93327 3.85725 5.28831ZM4.5001 3.35974C3.43498 3.35974 2.57153 4.22319 2.57153 5.28831C2.57153 6.35343 3.43498 7.21688 4.5001 7.21688C5.56523 7.21688 6.42868 6.35343 6.42868 5.28831C6.42868 4.22319 5.56523 3.35974 4.5001 3.35974Z"/>
+</svg><span class="desktop">Казань, ТЦ Сити Центр</span><span class="smart">Казань</span>
+            </button>
+          </div>
+          <div class="header__top-nav">
+            <ul>
+              <li><a href="#">Пункты выдачи</a></li>
+              <li><a href="#">Оплата</a></li>
+              <li><a href="#">Партнерам</a></li>
+              <li><a href="#">Как сделать заказ?</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header__control">
+        <div class="container"><a class="header__control-prev" href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.27273 1L2 8M2 8L9.27273 15M2 8H16" stroke="#222222" stroke-width="2"/>
+</svg></a>
+          <button class="header__control-burger" type="button" data-modal="modal_menu"><span class="line"></span><span class="line"></span><span class="line"></span></button>
+          <div class="header__control-logo"><a href="#"><img src="./img/logo.svg" alt="logo"></a></div>
+          <div class="header__control-search">
+            <form action="/">
+              <input class="search-field" type="text" name="search" placeholder="Поиск...">
+              <button class="search-button" type="submit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" y="5" width="12" height="12" rx="6" stroke-width="2"/>
+<rect x="15.5355" y="16.389" width="2" height="4" transform="rotate(-45 15.5355 16.389)"/>
+</svg>
+              </button>
+            </form>
+          </div>
+          <div class="header__control-user">
+            <button class="link smart" type="button" data-modal="modal_search"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" y="5" width="12" height="12" rx="6" stroke-width="2"/>
+<rect x="15.5355" y="16.389" width="2" height="4" transform="rotate(-45 15.5355 16.389)"/>
+</svg> 
+            </button><a class="link" href="#" data-modal="modal_login"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.90002 21.4001C8.92071 14.5646 17.5814 14.3693 22.1 21.4001" stroke-width="2"/>
+<rect x="9.09998" y="4.5" width="7.8" height="7.8" rx="3.9" stroke-width="2"/>
+</svg><span>Войти</span></a><a class="link" href="#"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 23.3L4 9.30005H22L24 23.3H2Z" stroke-width="2"/>
+<path d="M8 9.30005C8.00004 6 9.94991 3.30005 13 3.30005C16.0501 3.30005 18 6 18 9.30005" stroke-width="2"/>
+</svg><span>Корзина</span></a>
+          </div>
+        </div>
+      </div>
+      <nav class="header__nav">
+        <div class="container">
+          <ul>
+            <li class="header__nav-drop"><a href="#">Аксессуары</a>
+              <div class="header__nav-drop-panel">
+                <ul>
+                  <li><span>Защита корпуса (Чехлы и Накладки)</span></li>
+                  <li><a href="#">Накладки</a></li>
+                  <li><a href="#">Чехлы</a></li>
+                  <li><a href="#">Универсальные чехлы</a></li>
+                  <li><a href="#">Пленки для защиты корпуса</a></li>
+                </ul>
+                <ul>
+                  <li><span>Аксессуары для часов и браслетов</span></li>
+                  <li><a href="#">Ремешки для фитнес-браслетов</a></li>
+                  <li><a href="#">Ремешки для умных часов</a></li>
+                  <li><a href="#">Защитные стекла и пленки<br> для часов и браслетов</a></li>
+                  <li><a href="#">Зарядные устройства<br> для часов и браслетов</a></li>
+                </ul>
+                <ul>
+                  <li><span>Наушники и гарнитуры</span></li>
+                  <li><a href="#">Наушники и гарнитуры беспроводные</a></li>
+                  <li><a href="#">Наушники и гарнитуры проводные</a></li>
+                  <li><a href="#">Bluetooth-гарнитуры</a></li>
+                  <li><a href="#">Чехлы и футляры для наушников</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">Звук</a></li>
+            <li><a href="#">Мобильная связь</a></li>
+            <li><a href="#">Часы и браслеты</a></li>
+            <li><a href="#">Фото/видео техника</a></li>
+            <li><a href="#">Бытовая техника</a></li>
+            <li><a href="#">Здоровье и красота</a></li>
+            <li><a href="#">Автомобильная электроника</a></li>
+            <li><a href="#">Автомобильные аксессуары</a></li>
+            <li><a href="#">Игры и развлечения</a></li>
+            <li><a href="#">Сетевые устройства</a></li>
+            <li><a href="#">Телевидение</a></li>
+            <li><a href="#">Оборудование и инструмент</a></li>
+            <li><a href="#">Полезные мелочи</a></li>
+            <li><a href="#">Товары для спорта и отдыха</a></li>
+            <li><a href="#">Транспорт</a></li>
+            <li><a href="#">Распродажа</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="wrapper">
+        <div class="page_text">
+          <p>Партнерам<br>Деятельность нашей компании</p>
+          <p>Основу ассортимента составляют портативная электроника, электротранспорт и аксессуары, но также <br> мы представляем все товары личного пользования, которые находятся в тренде (умные устройства для дома,<br>носимые аксессуары, радиоуправляемые девайсы и просто приятные безделушки – одним словом все то, что<br> становится популярным среди людей).</p>
+          <p>Мы хотим, чтобы все жители России могли иметь возможность прийти<br>в наш магазин и купить наши товары. Клиент должен уходить от нас с хорошим настроением и покупкой.</p>
+          <p>Принципиальное отличие наших товаров в том, что они продаются дешевле, чем у<br>конкурентов в российских розничных сетях. В нашем бизнесе идёт упор на популярность бренда и оригинальность товара.</p>
+          <p>Мы работаем с апреля 2017 года и за это время достигли значительных успехов.</p>
+          <p>С нашими будущими партнерами (франчайзи) мы выстраиваем диалог и всегда опираемся на экспертный опыт партнера, так<br> как он обладает знаниями локальной специфики рынка. Мы даем возможность реализовать<br> собственные знания, опыт и амбиции, а не диктуем условия работы сверху. Вы сможете сами определять, что<br>продавать и по какой цене продавать, как стимулировать покупателей к покупке и мотивировать свой персонал к<br> продажам. Мы приветствуем предпринимательскую инициативу на местах и масштабируем<br>удачный опыт на всю сеть – в этом отличительная черта нашей компании.</p>
+          <p>А, если вы только встали на путь предпринимательства, мы дадим вам все необходимые инструменты и<br>инструкции для достижения успеха. Для наших покупателей мы обеспечиваем максимальную<br>доступность интересных, современных устройств, гаджетов, смартфонов, электротранспорта.</p><span>Наша сеть отличается от конкурентов тем, что у нас есть:</span>
+          <ul>
+            <li>Система лояльности для клиентов. Владельцы наших карт получают самые низкие цены в городе среди офлайн и онлайн магазинов.</li>
+            <li>Товары в наличии в магазине по ценам Алиэкспресс.</li>
+            <li>Скорость поставки любого товара из Китая 14 дней.</li>
+            <li>Все новинки Китайских производителей появляются первыми в нашем магазине.</li>
+            <li>В ассортименте только популярные и модные товары. Старые стоки забираем из магазина и реализуем посредством оптовой торговли.</li>
+            <li>«Одежда» для телефонов (чехлы/накладки) поставляются коллекциями и никогда не повторяются.</li>
+            <li>Регулярные распродажи коллекций «одежды» для телефонов.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__top_left"><a class="logo" href="#">МАНDАРИН</a>
+            <div class="social_list"><a href="#"><svg class="icon-twitter" width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.4691 0.999986L20.968 0.966906C20.9547 0.766336 20.8226 0.593226 20.6327 0.527486C20.4427 0.461746 20.2319 0.516146 20.0974 0.665586L20.4691 0.999986ZM19.5428 5.227C19.5428 4.95085 19.3189 4.727 19.0428 4.727C18.7666 4.727 18.5428 4.95085 18.5428 5.227H19.5428ZM10.5 6.49999V6.99999H11V6.49999H10.5ZM1.92637 0.999986L2.39462 0.824666C2.32485 0.638326 2.15124 0.511086 1.95255 0.500676C1.75385 0.490256 1.56789 0.598636 1.47902 0.776656L1.92637 0.999986ZM7.5 14L7.85383 14.3533C7.97619 14.2307 8.02642 14.0536 7.98661 13.885C7.94679 13.7165 7.8226 13.5806 7.65833 13.5257L7.5 14ZM0.5 16.7143V16.2143C0.279732 16.2143 0.0854106 16.3584 0.0215054 16.5692C-0.0423999 16.78 0.0391664 17.0078 0.222353 17.1301L0.5 16.7143ZM17.9515 2.39053L17.5806 2.72588L17.7608 2.92512L18.0264 2.8849L17.9515 2.39053ZM19.9702 1.03307C20.0446 2.15498 19.9783 2.86394 19.7838 3.41242C19.5929 3.95046 19.2609 4.38418 18.6968 4.92469L19.3887 5.64672C20.0033 5.05779 20.4605 4.49569 20.7262 3.74675C20.9882 3.00826 21.0458 2.13908 20.968 0.966906L19.9702 1.03307ZM19.5428 6.26784V5.2857H18.5428V6.26784H19.5428ZM19.5428 5.2857V5.227H18.5428V5.2857H19.5428ZM10 5.49999V6.49999H11V5.49999H10ZM14.8223 0.499986C12.125 0.499986 10 2.85064 10 5.49999H11C11 3.35062 12.7282 1.49999 14.8223 1.49999V0.499986ZM18.5428 6.26784C18.5428 12.5599 13.2624 18 7 18V19C13.8342 19 19.5428 13.0925 19.5428 6.26784H18.5428ZM1.45811 1.17531C2.22305 3.21829 5.10161 6.99999 10.5 6.99999V5.99999C5.62855 5.99999 3.05605 2.59121 2.39462 0.824666L1.45811 1.17531ZM1.47902 0.776656C0.00554836 3.72815 -0.242404 6.59714 0.775073 9.03209C1.79256 11.467 4.03467 13.3702 7.34167 14.4743L7.65833 13.5257C4.54668 12.4869 2.57561 10.7473 1.69776 8.6465C0.819895 6.5457 0.994452 3.98612 2.37372 1.22332L1.47902 0.776656ZM7.14617 13.6467C6.26646 14.5278 3.76165 16.2143 0.5 16.2143V17.2143C4.08491 17.2143 6.83174 15.377 7.85383 14.3533L7.14617 13.6467ZM18.3224 2.05519C17.4594 1.10083 16.2107 0.499986 14.8223 0.499986V1.49999C15.916 1.49999 16.8991 1.97213 17.5806 2.72588L18.3224 2.05519ZM18.0264 2.8849C19.0619 2.72807 20.0775 2.18291 20.8409 1.33439L20.0974 0.665586C19.4829 1.34871 18.6743 1.77536 17.8766 1.89617L18.0264 2.8849ZM0.222353 17.1301C2.47016 18.631 4.63313 19 7 19V18C4.75713 18 2.80895 17.6548 0.777647 16.2985L0.222353 17.1301Z"/>
+</svg></a><a href="#"><svg class="icon-instagram" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 5.5H17H16ZM4.5 0.5H16.5C18.7091 0.5 20.5 2.29086 20.5 4.5V16.5C20.5 18.7091 18.7091 20.5 16.5 20.5H4.5C2.29086 20.5 0.5 18.7091 0.5 16.5V4.5C0.5 2.29086 2.29086 0.5 4.5 0.5ZM10.5 14.5C8.29086 14.5 6.5 12.7091 6.5 10.5C6.5 8.29086 8.29086 6.5 10.5 6.5C12.7091 6.5 14.5 8.29086 14.5 10.5C14.5 12.7091 12.7091 14.5 10.5 14.5Z"/>
+</svg></a><a href="#"><svg class="icon-wt" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.49971 16.5006L2.94693 16.7242L3.08525 16.4475L2.89947 16.2003L2.49971 16.5006ZM4.49943 18.5003L4.79974 18.1005L4.55246 17.9148L4.27582 18.0531L4.49943 18.5003ZM0.499998 20.5L0.0527849 20.2764C-0.0434622 20.4689 -0.00573502 20.7014 0.146445 20.8536C0.298625 21.0057 0.53111 21.0435 0.723605 20.9472L0.499998 20.5ZM6.5 6.50001L6.2 6.10001C6.0741 6.19444 6 6.34263 6 6.50001H6.5ZM14.5 14.5V15C14.6475 15 14.7875 14.9349 14.8825 14.8221L14.5 14.5ZM7.12146 6.03392L6.82146 5.63392L7.12146 6.03392ZM8.71373 6.70988L8.21759 6.7719L8.71373 6.70988ZM8.93934 8.5147L9.43548 8.45269L8.93934 8.5147ZM8.65417 9.34585L8.30061 8.99229L8.65417 9.34585ZM14.9433 13.9736L14.5608 13.6515L14.9433 13.9736ZM14.3232 12.34L14.3956 11.8453L14.3232 12.34ZM12.4968 12.0727L12.5692 11.578L12.4968 12.0727ZM11.6449 12.3551L11.9985 12.7086L11.6449 12.3551ZM1.06815e-05 10.5C1.06815e-05 12.8635 0.781493 15.0459 2.09995 16.8009L2.89947 16.2003C1.70665 14.6125 1.00001 12.6395 1.00001 10.5H1.06815e-05ZM10.5 0C4.70102 0 1.06815e-05 4.70101 1.06815e-05 10.5H1.00001C1.00001 5.2533 5.25331 1 10.5 1V0ZM21 10.5C21 4.70101 16.299 0 10.5 0V1C15.7467 1 20 5.25329 20 10.5H21ZM10.5 21C16.299 21 21 16.299 21 10.5H20C20 15.7467 15.7467 20 10.5 20V21ZM4.19911 18.9001C5.95415 20.2185 8.13654 21 10.5 21V20C8.36054 20 6.38755 19.2934 4.79974 18.1005L4.19911 18.9001ZM0.723605 20.9472L4.72303 18.9475L4.27582 18.0531L0.276391 20.0528L0.723605 20.9472ZM2.0525 16.277L0.0527849 20.2764L0.947212 20.7236L2.94693 16.7242L2.0525 16.277ZM6 6.50001V7.50001H7V6.50001H6ZM13.5 15H14.5V14H13.5V15ZM6 7.50001C6 11.6421 9.35786 15 13.5 15V14C9.91015 14 7 11.0899 7 7.50001H6ZM6.8 6.90001L7.42146 6.43392L6.82146 5.63392L6.2 6.10001L6.8 6.90001ZM8.21759 6.7719L8.4432 8.57672L9.43548 8.45269L9.20987 6.64787L8.21759 6.7719ZM8.30061 8.99229L7.14645 10.1465L7.85355 10.8536L9.00772 9.6994L8.30061 8.99229ZM8.4432 8.57672C8.46234 8.72982 8.40972 8.88319 8.30061 8.99229L9.00772 9.6994C9.33503 9.37209 9.49289 8.912 9.43548 8.45269L8.4432 8.57672ZM7.42146 6.43392C7.72858 6.20357 8.16998 6.39095 8.21759 6.7719L9.20987 6.64787C9.06702 5.50503 7.74284 4.94288 6.82146 5.63392L7.42146 6.43392ZM14.8825 14.8221L15.3258 14.2957L14.5608 13.6515L14.1175 14.1779L14.8825 14.8221ZM14.3956 11.8453L12.5692 11.578L12.4244 12.5675L14.2508 12.8347L14.3956 11.8453ZM11.2914 12.0015L10.1464 13.1465L10.8536 13.8536L11.9985 12.7086L11.2914 12.0015ZM12.5692 11.578C12.1003 11.5094 11.6265 11.6664 11.2914 12.0015L11.9985 12.7086C12.1102 12.5969 12.2681 12.5446 12.4244 12.5675L12.5692 11.578ZM15.3258 14.2957C16.0829 13.3965 15.5587 12.0155 14.3956 11.8453L14.2508 12.8347C14.6385 12.8915 14.8132 13.3518 14.5608 13.6515L15.3258 14.2957Z"/>
+</svg></a><a href="#"><svg class="icon-youtube" width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.20091 16.8403L2.10285 17.3306L2.20091 16.8403ZM18.7991 16.8403L18.8972 17.3306L18.7991 16.8403ZM18.913 2.3029L19.0178 1.814L18.913 2.3029ZM2.08696 2.3029L2.19172 2.7918L2.08696 2.3029ZM8.5 6.50011L8.75725 6.07136C8.60278 5.97868 8.4104 5.97625 8.25365 6.06501C8.0969 6.15376 8 6.31997 8 6.50011H8.5ZM8.5 12.5001H8C8 12.6802 8.0969 12.8464 8.25365 12.9352C8.41041 13.0239 8.60278 13.0215 8.75725 12.9288L8.5 12.5001ZM13.5 9.50012L13.7572 9.92882C13.9079 9.83852 14 9.67572 14 9.50012C14 9.32452 13.9079 9.16172 13.7572 9.07132L13.5 9.50012ZM0 4.26594V14.7655H1V4.26594H0ZM21 14.7655V4.26594H20V14.7655H21ZM2.10285 17.3306C7.64606 18.4392 13.3539 18.4392 18.8972 17.3306L18.701 16.35C13.2873 17.4327 7.71271 17.4327 2.29897 16.35L2.10285 17.3306ZM19.0178 1.814C13.403 0.610829 7.597 0.610829 1.98219 1.814L2.19172 2.7918C7.66841 1.61822 13.3316 1.61822 18.8083 2.7918L19.0178 1.814ZM21 4.26594C21 3.08351 20.174 2.06175 19.0178 1.814L18.8083 2.7918C19.5034 2.94075 20 3.55505 20 4.26594H21ZM20 14.7655C20 15.5357 19.4563 16.1989 18.701 16.35L18.8972 17.3306C20.1199 17.086 21 16.0124 21 14.7655H20ZM0 14.7655C0 16.0124 0.880133 17.086 2.10285 17.3306L2.29897 16.35C1.54367 16.1989 1 15.5357 1 14.7655H0ZM1 4.26594C1 3.55505 1.49661 2.94075 2.19172 2.7918L1.98219 1.814C0.826006 2.06175 0 3.08351 0 4.26594H1ZM8 6.50011V12.5001H9V6.50011H8ZM8.75725 12.9288L13.7572 9.92882L13.2428 9.07132L8.24275 12.0713L8.75725 12.9288ZM13.7572 9.07132L8.75725 6.07136L8.24275 6.92885L13.2428 9.92882L13.7572 9.07132Z"/>
+</svg></a></div>
+          </div>
+          <div class="footer__top_right">
+            <div class="list"><a class="list__header" href="#"><b>Помощь</b></a>
+              <ul>
+                <li><a href="#">Как оформить заказ?</a></li>
+                <li><a href="#">Правила продажи</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Возврат денежных средств</a></li>
+              </ul><a class="list__bottom" href="#"><svg width="17" height="22" viewBox="0 0 17 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 0C13.1944 0 17 3.80557 17 8.5C17 11.4856 15.6222 14.5046 13.3188 17.4506C12.5013 18.4961 11.6122 19.471 10.7014 20.3589C10.6263 20.4321 10.5525 20.5033 10.4801 20.5726L10.0621 20.9646L9.6806 21.3085L9.3398 21.6027L9.1317 21.7752C8.7665 22.0728 8.2432 22.0752 7.8753 21.7809L7.6577 21.6007L7.3185 21.3077L6.9377 20.9645L6.5199 20.5726L6.2986 20.3589C5.3878 19.471 4.4987 18.4961 3.6812 17.4506C1.3778 14.5046 0 11.4856 0 8.5C0 3.80557 3.8056 0 8.5 0ZM8.5 2C4.9101 2 2 4.91013 2 8.5C2 10.9562 3.2028 13.5917 5.2568 16.2187C6.0151 17.1885 6.8446 18.0981 7.6947 18.9268L8.0975 19.3121C8.32409 19.5248 8.67337 19.5221 8.9025 19.3121L9.3053 18.9268C10.1554 18.0981 10.9849 17.1885 11.7432 16.2187C13.7972 13.5917 15 10.9562 15 8.5C15 4.91013 12.0899 2 8.5 2ZM8.5 4.5C10.7091 4.5 12.5 6.29086 12.5 8.5C12.5 10.7091 10.7091 12.5 8.5 12.5C6.2909 12.5 4.5 10.7091 4.5 8.5C4.5 6.29086 6.2909 4.5 8.5 4.5ZM8.5 6.5C7.3954 6.5 6.5 7.39543 6.5 8.5C6.5 9.6046 7.3954 10.5 8.5 10.5C9.6046 10.5 10.5 9.6046 10.5 8.5C10.5 7.39543 9.6046 6.5 8.5 6.5Z" fill="white" fill-opacity="0.95"/>
+</svg><span>Пункты выдачи</span></a><a class="list__bottom smart" href="#"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 1.81818C9.22808 1.81818 7.79167 3.24273 7.79167 5C7.79167 6.75727 9.22808 8.18182 11 8.18182C12.7719 8.18182 14.2083 6.75727 14.2083 5C14.2083 3.24273 12.7719 1.81818 11 1.81818ZM5.95833 5C5.95833 2.23857 8.21553 0 11 0C13.7845 0 16.0417 2.23857 16.0417 5C16.0417 7.76143 13.7845 10 11 10C8.21553 10 5.95833 7.76143 5.95833 5ZM8.18519 10.2871L8.28263 10.3905C8.34524 10.4569 8.43599 10.5534 8.54883 10.6739C8.77461 10.9149 9.08912 11.2522 9.44488 11.6378C10.2909 12.555 11.7473 12.5632 12.5862 11.6395L13.8022 10.3006C14.0042 10.0783 14.3037 9.96873 14.603 10.0077C15.3423 10.1043 16.0748 10.5315 16.7122 11.0568C17.3695 11.5986 18.0165 12.3196 18.5864 13.1434C19.4691 14.4192 20.2156 16.0138 20.501 17.6766C20.5501 17.9631 20.7926 18.1818 21.0833 18.1818C21.5896 18.1818 22 18.5888 22 19.0909C22 19.593 21.5896 20 21.0833 20H0.916667C0.410392 20 0 19.593 0 19.0909C0 18.5888 0.410392 18.1818 0.916667 18.1818C1.20362 18.1818 1.4423 17.9644 1.48696 17.6809C1.7403 16.0731 2.40202 14.5736 3.24784 13.3386C4.32447 11.7666 5.77894 10.5104 7.23498 10.044C7.5724 9.93591 7.94246 10.0305 8.18519 10.2871ZM4.37318 14.982C3.4708 16.5484 4.86679 18.1818 6.67449 18.1818H15.2658C17.0915 18.1818 18.4696 16.5294 17.5622 14.9452C17.4093 14.6781 17.246 14.4195 17.0747 14.172C16.5833 13.4616 16.0465 12.8723 15.5404 12.4552C15.1186 12.1075 14.5226 12.2242 14.1551 12.6289L11.6811 15.3527C11.5039 15.5479 11.2502 15.6575 10.9853 15.6533C10.7205 15.6491 10.4705 15.5315 10.2997 15.3308C9.65882 14.5783 8.79826 13.6305 8.09215 12.865C7.61362 12.3462 6.83641 12.2048 6.29371 12.656C5.7654 13.0953 5.23685 13.6704 4.76437 14.3602C4.62715 14.5606 4.49638 14.7682 4.37318 14.982Z" fill="white"/>
+</svg><span>Партнерам</span></a>
+            </div>
+            <div class="list"><a class="list__header" href="#"><b>О компании</b></a>
+              <ul>
+                <li><a href="#">Сертификаты</a></li>
+                <li><a href="#">Преимущества</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Наши скидки</a></li>
+              </ul><a class="list__bottom" href="#"><span>Партнерам</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>2017-2021 © <br>МАНDАРИН — интернет-магазин электроники и аксессуаров популярных китайских брендов.<br>Все права защищены. Цены на сайте носят информационный характер и не являются публичной офертой.</p>
+        </div>
+      </div>
+    </footer>
+    <div class="modal" id="modal_change_sity">
+      <div class="modal__wrapper">
+        <div class="modal__header"><span class="title">Выбрать город</span><a class="modal__close" href="#"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg></a></div>
+        <div class="modal__content">
+          <div class="modal__content_sity">
+            <div class="title">Ваш город <span>Казань</span>?</div>
+            <div class="buttons">
+              <button class="button-orange" type="button"><span>Да, спасибо!</span></button>
+              <button class="button-border" type="button"><span>Нет, изменить</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal_login">
+      <div class="modal__wrapper">
+        <div class="modal__header"><a class="modal__close" href="#"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg></a></div>
+        <div class="modal__content">
+          <div class="modal__content_auth">
+            <div class="title">Войти</div>
+            <input class="field" type="number" placeholder="Номер телефона">
+            <input class="field" type="password" placeholder="Пароль"><a href="#">Забыли логин или пароль? </a>
+            <div class="buttons">
+              <button class="button-orange" type="button"><span>Войти</span></button>
+              <button class="button-border" type="button" data-modal="modal_register"><span>Зарегистрироваться</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal_register">
+      <div class="modal__wrapper">
+        <div class="modal__header"><a class="modal__close" href="#"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg></a></div>
+        <div class="modal__content">
+          <div class="modal__content_auth">
+            <div class="title">Регистрация</div>
+            <input class="field" type="text" placeholder="Имя">
+            <input class="field" type="number" placeholder="Номер телефона">
+            <input class="field" type="email" placeholder="E-mail">
+            <input class="field" type="password" placeholder="Пароль">
+            <input class="field" type="password" placeholder="Повторите пароль">
+            <label class="filter_checked">
+              <input type="checkbox"><span class="check"><svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 4.76471L5.15385 9L13 1" stroke="white" stroke-width="2"/>
+</svg></span><span class="title">Я принимаю условия <a href="#">политики кофиденциальности</a></span>
+            </label>
+            <div class="buttons">
+              <button class="button-orange" type="button"><span>Зарегистрироваться</span></button>
+              <button class="button-border" type="button" data-modal="modal_login"><span>Войти</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal_search">
+      <div class="modal__wrapper">
+        <div class="modal__header"><span class="title">Поиск по сайту</span><a class="modal__close" href="#"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg></a></div>
+        <div class="modal__content">
+          <div class="modal__content_search">
+            <form action="/"> 
+              <input class="field" type="text" placeholder="Поиск...">
+              <div class="buttons">
+                <button class="button-orange" type="submit"><span>Поиск</span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><a class="smart_cart" href="#"><svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.46143 25.677L3.92296 8.44623H26.0768L28.5383 25.677H1.46143Z" stroke="white" stroke-width="2"/>
+<path d="M8.84619 8.44623C8.84624 4.38463 11.2461 1.06161 15 1.06161C18.754 1.06161 21.1539 4.38463 21.1539 8.44623" stroke="white" stroke-width="2"/>
+</svg><span>3</span></a>
+    <div class="modal modal_menu" id="modal_menu">
+      <div class="modal__wrapper">
+        <div class="modal__header">
+          <div class="modal__header_first">
+            <button class="modal__close" type="button"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg>
+            </button>
+            <div class="logo"><img src="./img/logo.svg" alt="image"></div>
+            <button class="modal__search" type="button" data-modal="modal_search"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="6" y="5" width="12" height="12" rx="6" stroke-width="2"/>
+<rect x="15.5355" y="16.389" width="2" height="4" transform="rotate(-45 15.5355 16.389)"/>
+</svg>
+            </button>
+          </div>
+          <div class="modal__header_parent hide">
+            <button class="modal__prev" type="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.27273 1L2 8M2 8L9.27273 15M2 8H16" stroke="#222222" stroke-width="2"/>
+</svg>
+            </button>
+            <div class="title"></div>
+            <button class="modal__close" type="button"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg>
+            </button>
+          </div>
+          <div class="modal__header_parent_parent hide">
+            <button class="modal__prev" type="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.27273 1L2 8M2 8L9.27273 15M2 8H16" stroke="#222222" stroke-width="2"/>
+</svg>
+            </button>
+            <div class="title"></div>
+            <button class="modal__close" type="button"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L17 17M17 1L1 17" stroke="#222222" stroke-width="2"/>
+</svg>
+            </button>
+          </div>
+        </div>
+        <div class="modal__content">
+          <div class="modal__content_nav" id="smart_navigation">
+            <ul>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                <ul class="parent_menu">
+                  <li><a href="#"><span>Аксессуары 1</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                    <ul class="parent_menu_sub">
+                      <li><a href="#"><span>Аксессуары 1 1</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 1 1 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 1 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 1 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 1 2</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 1 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 2 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 1 3</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 1 3 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 3 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 3 3</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span>Аксессуары 2</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                    <ul class="parent_menu_sub">
+                      <li><a href="#"><span>Аксессуары 2 1</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 2 1 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 1 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 1 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 2 2</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 2 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 2 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 2 3</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 2 3 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 3 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 3 3</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span>Аксессуары 3</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                    <ul class="parent_menu_sub">
+                      <li><a href="#"><span>Аксессуары 3 1</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 3 1 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 1 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 1 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 3 2</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 3 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 3 3</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 3 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 3</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                <ul class="parent_menu">
+                  <li><a href="#"><span>Аксессуары 1</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                    <ul class="parent_menu_sub">
+                      <li><a href="#"><span>Аксессуары 1 1</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 1 1 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 1 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 1 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 1 2</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 1 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 2 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 1 3</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 1 3 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 3 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 1 3 3</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span>Аксессуары 2</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                    <ul class="parent_menu_sub">
+                      <li><a href="#"><span>Аксессуары 2 1</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 2 1 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 1 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 1 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 2 2</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 2 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 2 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 2 3</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 2 3 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 3 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 2 3 3</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span>Аксессуары 3</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                    <ul class="parent_menu_sub">
+                      <li><a href="#"><span>Аксессуары 3 1</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 3 1 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 1 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 1 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 3 2</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 3 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 3</span></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><span>Аксессуары 3 3</span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999982 11L6 6.00001L0.999999 1" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a>
+                        <ul class="parent_menu_sub_sub">
+                          <li><a href="#"><span>Аксессуары 3 2 1</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 2</span></a></li>
+                          <li><a href="#"><span>Аксессуары 3 2 3</span></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a></li>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a></li>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a></li>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a></li>
+              <li><a class="parent" href="#"> <span>Аксессуары</span><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999976 0.999982L5.99999 6L11 0.999999" stroke="#B1B1B1" stroke-width="1.52"/>
+</svg></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./libs/lazysizes/lazysizes.min.js" defer></script>
+    <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
+    <script src="./libs/nouislider/nouislider.min.js" defer></script>
+    <script src="./js/common.js" defer></script>
+  </body>
+</html>
